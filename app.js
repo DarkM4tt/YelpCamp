@@ -58,8 +58,7 @@ passport.serializeUser(User.serializeUser()) //how to store user in session
 passport.deserializeUser(User.deserializeUser())
 
 app.use((req, res, next) => {
-  
-  res.locals.currentUser = req.user;
+  res.locals.currentUser = req.user
   res.locals.success = req.flash('success')
   res.locals.error = req.flash('error')
   next()
@@ -89,6 +88,8 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render('error', { err })
 })
 
-app.listen('5000', () => {
+const PORT = process.env.PORT || 5000
+
+app.listen(PORT, () => {
   console.log('Listening On Port 5000')
 })
