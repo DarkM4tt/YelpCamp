@@ -17,7 +17,9 @@ const campgroundRoutes = require('./routes/campgrounds')
 const reviewRoutes = require('./routes/reviews')
 
 mongoose
-  .connect('mongodb://0.0.0.0:27017/yelp-camp')
+  .connect(
+    'mongodb+srv://YCamps:yelpcamp@cluster0.nid1u.mongodb.net/?retryWrites=true&w=majority'
+  )
   .then(() => {
     console.log('MONNGO CONNECTION OPEN!!!')
   })
